@@ -12,17 +12,138 @@ div:hover {  background-color: #424242;
 input[type=checkbox] {  }
 </style>
 <body style="background-color: #353535;color: white;margin-left: auto;margin-right: auto;width: 109em;">
+
+<script>
+        function cboxall() {
+            if (document.getElementById("cboxall").checked) {
+                for( i = 0 ; i < document.getElementsByClassName('v').length ; i++ )
+				{
+					document.getElementById("cboxwr").checked = true;
+					document.getElementById("cboxskip").checked = true;
+					document.getElementById("cboxmouse").checked = true;
+					document.getElementById("cboxhand").checked = true;
+					document.getElementsByClassName('v')[i].style.display = "";
+				}
+            } else {
+				for( i = 0 ; i < document.getElementsByClassName('v').length ; i++ )
+				{
+					document.getElementById("cboxwr").checked = false;
+					document.getElementById("cboxskip").checked = false;
+					document.getElementById("cboxmouse").checked = false;
+					document.getElementById("cboxhand").checked = false;
+					document.getElementsByClassName('v')[i].style.display = "none";
+				}
+            }
+        }
+		
+        function cboxwr() {
+			for( i = 0 ; i < document.getElementsByClassName('v').length ; i++ )
+			{
+				if (document.getElementById("cboxwr").checked)
+				{
+					if(document.getElementsByClassName('v')[i].dataset.wr == true)
+					document.getElementsByClassName('v')[i].style.display = "";
+				}
+				else
+				{
+					document.getElementsByClassName('v')[i].style.display = "none";
+					
+					if(document.getElementsByClassName('v')[i].dataset.s)
+					if(document.getElementById("cboxskip").checked) document.getElementsByClassName('v')[i].style.display = "";
+					
+					if(document.getElementsByClassName('v')[i].dataset.m)
+					if(document.getElementById("cboxmouse").checked) document.getElementsByClassName('v')[i].style.display = "";
+					
+					if(document.getElementsByClassName('v')[i].dataset.h)
+					if(document.getElementById("cboxhand").checked) document.getElementsByClassName('v')[i].style.display = "";
+				}
+			}
+        }
+		
+        function cboxskip() {
+			for( i = 0 ; i < document.getElementsByClassName('v').length ; i++ )
+			{
+				if (document.getElementById("cboxskip").checked)
+				{
+					if(document.getElementsByClassName('v')[i].dataset.s == true)
+					document.getElementsByClassName('v')[i].style.display = "";
+				}
+				else
+				{
+					document.getElementsByClassName('v')[i].style.display = "none";
+					
+					if(document.getElementsByClassName('v')[i].dataset.wr)
+					if(document.getElementById("cboxwr").checked) document.getElementsByClassName('v')[i].style.display = "";
+					
+					if(document.getElementsByClassName('v')[i].dataset.m)
+					if(document.getElementById("cboxmouse").checked) document.getElementsByClassName('v')[i].style.display = "";
+					
+					if(document.getElementsByClassName('v')[i].dataset.h)
+					if(document.getElementById("cboxhand").checked) document.getElementsByClassName('v')[i].style.display = "";
+				}
+			}
+        }
+		
+        function cboxmouse() {
+			for( i = 0 ; i < document.getElementsByClassName('v').length ; i++ )
+			{
+				if (document.getElementById("cboxmouse").checked)
+				{
+					if(document.getElementsByClassName('v')[i].dataset.m == true)
+					document.getElementsByClassName('v')[i].style.display = "";
+				}
+				else
+				{
+					document.getElementsByClassName('v')[i].style.display = "none";
+					
+					if(document.getElementsByClassName('v')[i].dataset.wr)
+					if(document.getElementById("cboxwr").checked) document.getElementsByClassName('v')[i].style.display = "";
+					
+					if(document.getElementsByClassName('v')[i].dataset.s)
+					if(document.getElementById("cboxskip").checked) document.getElementsByClassName('v')[i].style.display = "";
+					
+					if(document.getElementsByClassName('v')[i].dataset.h)
+					if(document.getElementById("cboxhand").checked) document.getElementsByClassName('v')[i].style.display = "";
+				}
+			}
+        }
+		
+        function cboxhand() {
+			for( i = 0 ; i < document.getElementsByClassName('v').length ; i++ )
+			{
+				if (document.getElementById("cboxhand").checked)
+				{
+					if(document.getElementsByClassName('v')[i].dataset.h == true)
+					document.getElementsByClassName('v')[i].style.display = "";
+				}
+				else
+				{
+					document.getElementsByClassName('v')[i].style.display = "none";
+					
+					if(document.getElementsByClassName('v')[i].dataset.wr)
+					if(document.getElementById("cboxwr").checked) document.getElementsByClassName('v')[i].style.display = "";
+					
+					if(document.getElementsByClassName('v')[i].dataset.s)
+					if(document.getElementById("cboxskip").checked) document.getElementsByClassName('v')[i].style.display = "";
+					
+					if(document.getElementsByClassName('v')[i].dataset.m)
+					if(document.getElementById("cboxmouse").checked) document.getElementsByClassName('v')[i].style.display = "";
+				}
+			}
+        }
+</script>
+	
 <pre>
------------------------------------------------------------------------------------------------------------
-<h1 style="height: 13px;">Getting Over It Split Records (last update September 1 2024)</h1>
------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+<h1 style="height: 13px;">     Getting Over It Split Records (last update September 1 2024)</h1>
+------------------------------------------------------------------------------------------------------------------------------------------
 
-<h1>                      CSR 47.278</h1>
-                    *47.356 CSR video <a href="https://youtu.be/lEuB0zYelz0" target="_blank">https://youtu.be/QJLidHSWuW0</a> (01/06/2024)
+<h1>                            CSR 47.278</h1>
+                                     *47.356 CSR video <a href="https://youtu.be/lEuB0zYelz0" target="_blank">https://youtu.be/QJLidHSWuW0</a> (01/06/2024)
 
-<div>			<h2 style="height: 0px;">         *S* = skip      [M] = mouse tracker    [H] = hand cam </h2> </div>
+<div><h2 style="height: 0px;"><input style="transform: scale(2.5);accent-color: #fffb00;" type="checkbox" id="cboxall"  checked onclick="cboxall()" />  ALL    <input style="transform: scale(2.5);accent-color: #fffb00;" type="checkbox" id="cboxwr"  checked onclick="cboxwr()" />  🟡 = wr    <input style="transform: scale(2.5);accent-color: #fffb00;"  type="checkbox" id="cboxskip"  checked onclick="cboxskip()" />  *S* = skip    <input style="transform: scale(2.5);accent-color: #fffb00;" type="checkbox" id="cboxmouse" checked onclick="cboxmouse()" />  [M] = mouse tracker    <input style="transform: scale(2.5);accent-color: #fffb00;" type="checkbox" id="cboxhand" checked onclick="cboxhand()" />  [H] = hand cam </h2> </div>
 
-___________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________________
 
 <div style="height: 0px;font-size: 15;font-weight: bold;">Tutorial</div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr="1"  ><h3>              ██ 🏆 (Acefst)       8.144 🟡 <a href="https://www.bilibili.com/video/BV1ih4y117QS/" target="_blank">▶ Open video in new tab</a></h3></div>
@@ -42,7 +163,7 @@ ________________________________________________________________________________
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                🥉 (Gois3r)       8.326 <a href="https://youtu.be/vr0wJ0frIqQ" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                🥉 (Sfu0)         8.332 no video</div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                🥉 (Yeet1)        8.345 *invis* <a href="https://discord.com/channels/368463427792011265/368466784405422080/919427943946674186" target="_blank">▶ Open video in new tab</a></div>
-___________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________________
 
 <div style="height: 0px;font-size: 15;font-weight: bold;">Chimney</div>
 <div class="v"  data-s="1" data-m="" data-h="" data-wr="1"  ><h3>              ██ 🏆 (Acefst)       6.402 🟡 *S*  <a href="https://www.bilibili.com/video/BV1WM411s7J1/" target="_blank">▶ Open video in new tab</a></h3></div>
@@ -63,7 +184,7 @@ ________________________________________________________________________________
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                 🥉 (yckZS)        7.133 <a href="https://www.bilibili.com/video/BV13h411a77x" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                 🥉 (Freeze)       7.135 <a href="https://discord.com/channels/368463427792011265/368466784405422080/1237689762329133077" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                 🥉 (Gamesauce)    7.322 <a href="https://youtu.be/Shi5su-bnzk" target="_blank">▶ Open video in new tab</a></div>
-___________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________________
 
 <div style="height: 0px;font-size: 15;font-weight: bold;">Slide</div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr="1"  ><h3>              ██ 🏆 (Acefst)       4.934 🟡 <a href="https://www.bilibili.com/video/BV1TZ421S7UW/" target="_blank">▶ Open video in new tab</a></h3></div>
@@ -84,7 +205,7 @@ ________________________________________________________________________________
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                 🥉 (Gamesauce)    5.377 <a href="https://youtu.be/dYBrG89Pwkk" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                 🥉 (Yeet1)        5.409 <a href="https://discord.com/channels/368463427792011265/368466784405422080/899099385189793792" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                 🥉 (Obamid)       5.433 <a href="https://youtu.be/0yP9c71jLy0" target="_blank">▶ Open video in new tab</a></div>
-___________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________________
 
 <div style="height: 0px;font-size: 15;font-weight: bold;">Furniture</div>
 <div class="v"  data-s="1" data-m="" data-h="" data-wr="1"  ><h3>              ██ 🏆 (Acefst)       3.836 🟡 *S*  <a href="https://www.bilibili.com/video/BV19C411B7LE" target="_blank">▶ Open video in new tab</a></h3></div>
@@ -104,7 +225,7 @@ ________________________________________________________________________________
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                 🥉 (Gois3r)       4.667 <a href="https://youtu.be/5RuJvbkqacE" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                 🥉 (Ted)          4.694 <a href="https://youtu.be/c5oqQiRHylY" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                 🥉 (Gamesauce)    4.717 <a href="https://youtu.be/xv3QQwtguWM" target="_blank">▶ Open video in new tab</a></div>
-___________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________________
 
 <div style="height: 0px;font-size: 15;font-weight: bold;">Orange</div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr="1"  ><h3>              ██ 🏆 (Acefst)     4.458 🟡 <a href="https://www.bilibili.com/video/BV14Y411d7bV" target="_blank">▶ Open video in new tab</a></h3></div>
@@ -119,7 +240,7 @@ ________________________________________________________________________________
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                 🥉 (Gois3r)       4.934 <a href="https://youtu.be/z_G1evIdIQE" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="1" data-h="" data-wr=""  >                 🥉 (枪有点饿了-)   4.942 [M] <a href="https://www.bilibili.com/video/BV1og411M7Ww" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                 🥉 (Pyked)        4.965  <a href="https://discord.com/channels/368463427792011265/368466784405422080/1210771633091117076" target="_blank">▶ Open video in new tab</a></div>
-___________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________________
 
 <div style="height: 0px;font-size: 15;font-weight: bold;">Anvil</div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr="1"  ><h3>              ██ 🏆 (D-得)         4.352 🟡 <a href="https://discord.com/channels/368463427792011265/368466784405422080/1235447034320785540" target="_blank">▶ Open video in new tab</a></h3></div>
@@ -136,7 +257,7 @@ ________________________________________________________________________________
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                 🥉 (DeadEye)      4.915 <a href="https://youtu.be/2TAmRpiEx_c" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                 🥉 (Obamid)       5.015 <a href="https://youtu.be/slNmk9yBuIo" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                 🥉 (Gois3r)       5.267 <a href="https://youtu.be/1mK-QthASNA" target="_blank">▶ Open video in new tab</a></div>
-___________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________________
 
 <div style="height: 0px;font-size: 15;font-weight: bold;">Bucket</div>
 <div class="v"  data-s="1" data-m="" data-h="" data-wr="1"  ><h3>              ██ 🏆 (haixi)        4.840 🟡 *S* <a href="https://www.bilibili.com/video/BV1Po4y1t7Tz" target="_blank">▶ Open video in new tab</a></h3></div>
@@ -157,7 +278,7 @@ ________________________________________________________________________________
 <div class="v"  data-s="1" data-m="" data-h="" data-wr=""  >                 🥉 (yckZS)        5.768 *S* <a href="https://www.bilibili.com/video/BV1pv4y1f7fE" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="1" data-m="" data-h="" data-wr=""  >                 🥉 (Papalouie)    5.875 *S* <a href="https://youtu.be/vZi5FW3htiA" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="1" data-m="" data-h="" data-wr=""  >                 🥉 (Crumpet)      5.876 *S* <a href="https://youtu.be/NhEP_2EMIUo" target="_blank">▶ Open video in new tab</a></div>
-___________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________________
 
 <div style="height: 0px;font-size: 15;font-weight: bold;">Ice Mountain</div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr="1"  ><h3>              ██ 🏆 (Pyked)     2.649 🟡 <a href="https://youtu.be/yBdClBUIWOI" target="_blank">▶ Open video in new tab</a></h3></div>
@@ -174,7 +295,7 @@ ________________________________________________________________________________
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                 🥉 (Gamesauce)    3.150 <a href="https://youtu.be/WySl5ytt1kE" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                 🥉 (TheAm2397)    3.203 <a href="https://www.bilibili.com/video/BV1Pb4y1q7oP" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                 🥉 (Gois3r)       3.216 <a href="https://discord.com/channels/368463427792011265/368466784405422080/1177764516054958150" target="_blank">▶ Open video in new tab</a></div>
-___________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________________
 
 <div style="height: 0px;font-size: 15;font-weight: bold;">Tower</div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr="1"  ><h3>              ██ 🏆 (Pyked)        2.850 🟡 <a href="https://youtu.be/epvzIQAihos" target="_blank">▶ Open video in new tab</a></h3></div>
@@ -194,7 +315,7 @@ ________________________________________________________________________________
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                🥉 (ChaseLux)     3.223 <a href="https://youtu.be/T65on9EDgz0" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                🥉 (orzy)         3.242 <a href="https://youtu.be/RxLEXyjwq_Q" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                🥉 (Stillow)      3.308 <a href="https://clips.twitch.tv/HealthyFrailBunnyKappaRoss" target="_blank">▶ Open video in new tab</a></div>
-___________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________________
 
 <div style="height: 0px;font-size: 15;font-weight: bold;">Space</div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr="1"  ><h3>              ██ 🏆 (Acefst)       4.813 (  /.) 🟡 <a href="https://www.bilibili.com/video/BV1M2421A7PA/" target="_blank">▶ Open video in new tab</a></h3></div>
@@ -224,12 +345,12 @@ ________________________________________________________________________________
 
 
 
------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
 
 
 <h1>                    WR Paces</h1>	
 				
------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
 
 <div style="height: 0px;font-size: 15;font-weight: bold;">--► Chimney pace </div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr="1"  >                        🏆 (Acefst)               15.228 🟡 <a href="https://www.bilibili.com/video/BV1p14y1g7V6/" target="_blank">▶ Open video in new tab</a></div>
@@ -311,16 +432,25 @@ ________________________________________________________________________________
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                        (Blastbolt)               53.672 <a href="https://youtu.be/YDfSVdf5b7c" target="_blank">▶ Open video in new tab</a></div>
 
 
------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
 
 <div style="height: 0px;font-size: 15;font-weight: bold;">Tower Space </div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr="1"  >                        🏆 (bananenfriet)         8.625 🟡 <a href="https://discord.com/channels/368463427792011265/368466784405422080/1157026595203203152" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                        (Pyked)                   8.656 <a href="https://youtu.be/Oo-5jFNRBdM" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                        (Freeze)                  8.858 <a href="https://youtu.be/QAhTw-b41Nc" target="_blank">▶ Open video in new tab</a></div>
 
------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
 
 <div style="height: 0px;font-size: 15;font-weight: bold;">Ice Tower Space </div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr="1"  >                        🏆 (Blastbolt)            12.792 🟡 <a href="https://youtu.be/RSJNFoYLhH4" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="1" data-h="" data-wr=""  >                        (Leviathan)               13.291 [M] <a href="https://youtu.be/Pys9hjuCpRo" target="_blank">▶ Open video in new tab</a></div>
 <div class="v"  data-s="" data-m="" data-h="" data-wr=""  >                        (Davoroxi)                13.381 <a href="https://youtu.be/rIc60TBPxIw" target="_blank">▶ Open video in new tab</a></div>
+
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+*[outdated] Second Place Split Records : <a href="https://docs.google.com/spreadsheets/d/1IMjlqAjkK30iS-fBY5S-Pn11Lo_9jrxZiAYJoQ0p0hU" target="_blank">https://docs.google.com/spreadsheets/d/1IMjlqAjkK30iS-fBY5S-Pn11Lo_9jrxZiAYJoQ0p0hU</a>
+ 
+</body>
