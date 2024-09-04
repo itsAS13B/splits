@@ -359,6 +359,8 @@ function updateVisibility() {
         const showNone = toggleNone.checked && div.dataset.s === "0" && div.dataset.m === "0" && div.dataset.h === "0"&& div.dataset.wr === "0";
 
             div.style.display = (showS || showM || showH || showWR || showNone) ? 'block' : 'none';
+			
+		if( !toggleS.checked || !toggleM.checked || !toggleH.checked || !toggleWR.checked || !toggleNone.checked ) toggleAll.checked = false;
     });
 }
 
